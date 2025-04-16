@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="A simple and efficient note-taking app to help you jot down ideas, tasks, and reminders. Keep your thoughts organized and easily accessible."
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Aclonica&family=Inter:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="normalize.css" />
+    <title>Note App</title>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div class="header">
+          <div class="header-logo"><h1>Almdrasa-Note</h1></div>
+          <div class="search">
+            <button class="search-icon">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+            <input
+              id="note-search"
+              class="note-search"
+              type="text"
+              placeholder="Search..."
+            />
+          </div>
+          <nav class="notes-list">
+            <ul>
+              <li class="notes">
+                <button id="notes" class="nav-button active">
+                  <span class="nav-button__icon">
+                    <i class="fa-solid fa-note-sticky"></i>
+                  </span>
+                  <span class="nav-button__text">Notes</span>
+                </button>
+              </li>
+              <li class="add-note">
+                <button id="new" class="nav-button">
+                  <span class="nav-button__icon">
+                    <i class="fa-solid fa-plus"></i>
+                  </span>
+                  <span class="nav-button__text">Add Note</span>
+                </button>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+      <main>
+        <section id="form-content" class="form-content">
+          <form method="post">
+            <h2>Add Note</h2>
+            <div class="title">
+              <label for="title">Title:</label>
+              <input id="title" type="text" />
+            </div>
+            <div class="author">
+              <label for="author">Author:</label>
+              <input id="author" type="text" />
+            </div>
+            <div class="note-text">
+              <label for="text">Your Note:</label>
+              <textarea id="text"></textarea>
+            </div>
+            <div class="btns">
+              <button id="add-note" type="button">
+                <i class="fas fa-save"></i><span>Add Note </span>
+              </button>
+              <button id="add-pinned-note" type="button">
+                <i class="fas fa-thumbtack"></i><span>Add Pinned Note</span>
+              </button>
+              <button id="reset" type="reset" class="button button--ghost">
+                <i class="fas fa-times"></i><span>Cancel</span>
+              </button>
+            </div>
+          </form>
+        </section>
+
+        <section id="notes-list" class="notes-list__section">
+          <div class="section-header">
+            <h2 class="section-heading">Your Notes</h2>
+            <button id="toggle-notes-view" class="button button-icon">
+              <i class="fas fa-columns"></i>
+            </button>
+          </div>
+
+          <div class="note-container">
+            <!-- Pinned Notes -->
+            <div class="pinned-note">
+              <div class="pinned-note__header">
+                <h3><i class="fas fa-thumbtack"></i> Pinned Notes</h3>
+              </div>
+              <div class="pinned-note__card">
+                <ul id="pinned-note__list" class="pinned-note__list">
+                  
+                </ul>
+              </div>
+            </div>
+            <!-- All Notes -->
+            <div class="all-notes">
+              <div class="all-notes__header">
+                <h3></h3> All Notes</h3>
+              </div>
+              <div class="all-note__card">
+                <ul id="all-notes__list" class="all-notes__list">
+                </ul>
+              </div>
+            </div>
+          </div>
+          <button id="add-note-fab" class="fab" >
+            <i class="fas fa-plus" ></i>
+          </button>
+        </section>
+      </main>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
